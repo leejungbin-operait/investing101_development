@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:investing101_development/features/onboarding/presentation/home_widget_test.dart';
+import 'package:investing101_development/features/onboarding/presentation/start_screen.dart';
 import 'package:investing101_development/shared/theme/colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomeWidgetTest()),
+          MaterialPageRoute(builder: (context) => const StartScreen()),
         );
       }
     });
@@ -42,10 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 height: 32,
               ),
               const SizedBox(width: 8),
-              SvgPicture.asset(
-                'assets/images/logo_text.svg',
-                height: 21,
-              ),
+              SvgPicture.asset('assets/images/logo_text.svg', height: 21),
             ],
           ),
         ),
