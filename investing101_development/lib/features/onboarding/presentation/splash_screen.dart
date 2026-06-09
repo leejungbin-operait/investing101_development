@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:investing101_development/features/onboarding/presentation/login_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:investing101_development/features/onboarding/presentation/home_widget_test.dart';
 import 'package:investing101_development/shared/theme/colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,11 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Navigate to home page after 1 second
     Timer(const Duration(seconds: 3), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const LoginScreen()),
+          MaterialPageRoute(builder: (context) => const HomeWidgetTest()),
         );
       }
     });
@@ -29,45 +29,27 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primary,
-      body: CustomPaint(
-        painter: GridBackgroundPainter(),
-        child: Center(
-          child: Text(
-            'Investing 101',
-            style: TextStyle(
-              fontSize: 80,
-              fontWeight: FontWeight.bold,
-              color: AppColors.textOnPrimary, // Deep blue color
-              letterSpacing: 0,
-            ),
+      body: Center(
+        child: SizedBox(
+          width: 240,
+          height: 32,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                'assets/images/logo_icon.svg',
+                width: 39,
+                height: 32,
+              ),
+              const SizedBox(width: 8),
+              SvgPicture.asset(
+                'assets/images/logo_text.svg',
+                height: 21,
+              ),
+            ],
           ),
         ),
       ),
     );
   }
-}
-
-class GridBackgroundPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.grey
-          .withOpacity(0.1) // Very subtle grey
-      ..strokeWidth = 1.0;
-
-    const gridSize = 40.0; // Size of each grid square
-
-    // Draw vertical lines
-    for (double x = 0; x < size.width; x += gridSize) {
-      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
-    }
-
-    // Draw horizontal lines
-    for (double y = 0; y < size.height; y += gridSize) {
-      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
