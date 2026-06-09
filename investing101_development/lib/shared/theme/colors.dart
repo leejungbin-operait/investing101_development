@@ -25,6 +25,12 @@ abstract final class AppColors {
   static const Color surface = Color(0xFFFFFFFF);
 
   // ==============================
+  // 🧱 Shadows
+  // ==============================
+  static const Color shadowOnPrimary = Color(0xFF4A40E9);
+  static const Color shadowOnSurface = Color(0xFFD4DBDE);
+
+  // ==============================
   // 📝 Text Colors
   // ==============================
   static const Color textPrimary = Color(0xFF1A1A1A);
