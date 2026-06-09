@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:investing101/features/onboarding/presentation/login_screen.dart';
-import 'package:investing101/shared/theme/colors.dart';
+import 'package:investing101_development/features/onboarding/presentation/login_screen.dart';
+import 'package:investing101_development/shared/theme/colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
