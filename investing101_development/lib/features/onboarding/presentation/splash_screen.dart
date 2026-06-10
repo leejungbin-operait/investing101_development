@@ -2,8 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:investing101_development/features/onboarding/presentation/start_screen.dart';
-import 'package:investing101_development/shared/theme/colors.dart';
+import 'package:get/get.dart';
+import 'package:investing101_development/core/routes/app_routes.dart';
+import 'package:investing101_development/core/theme/colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,9 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       if (mounted) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const StartScreen()),
-        );
+        Get.offAllNamed(Routes.start);
       }
     });
   }
