@@ -13,7 +13,7 @@ class PreQuizScreen extends StatelessWidget {
       characterAsset: 'assets/images/welcome_character.png',
       buttonText: '계속하기',
       onButtonTap: () {
-        Get.toNamed(Routes.preQuiz);
+        Get.toNamed(Routes.survey);
       },
     );
   }
