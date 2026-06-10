@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:investing101_development/shared/theme/colors.dart';
+import 'package:get/get.dart';
+import 'package:investing101_development/core/routes/app_routes.dart';
+import 'package:investing101_development/core/theme/colors.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -93,7 +95,9 @@ class _ButtonSection extends StatelessWidget {
           shadowColor: AppColors.shadowOnPrimary,
           textColor: Colors.white,
           shadowOffset: 4,
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.welcome);
+          },
         ),
         const SizedBox(height: 12),
         _ThreeDButton(
@@ -103,7 +107,9 @@ class _ButtonSection extends StatelessWidget {
           textColor: AppColors.primary,
           shadowOffset: 3,
           borderColor: AppColors.shadowOnSurface,
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.welcome);
+          },
         ),
       ],
     );
