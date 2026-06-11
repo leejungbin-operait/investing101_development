@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/shared/widgets/onboarding_message_screen.dart';
 
@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
       characterAsset: 'assets/images/welcome_character.png',
       buttonText: '반가워 베스티!',
       onButtonTap: () {
-        Get.toNamed(Routes.preQuiz);
+        context.push(Routes.preQuiz);
       },
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/theme/colors.dart';
 
 /// Shared top bar for onboarding screens: a back button and a
@@ -24,7 +24,7 @@ class ProgressBarTopNav extends StatelessWidget {
       child: Row(
         children: [
           GestureDetector(
-            onTap: Get.back,
+            onTap: () => context.pop(),
             child: const Padding(
               padding: EdgeInsets.all(10),
               child: SizedBox(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/shared/widgets/onboarding_message_screen.dart';
 
@@ -13,7 +13,7 @@ class PreQuizScreen extends StatelessWidget {
       characterAsset: 'assets/images/welcome_character.png',
       buttonText: '계속하기',
       onButtonTap: () {
-        Get.toNamed(Routes.survey);
+        context.push(Routes.survey);
       },
     );
   }

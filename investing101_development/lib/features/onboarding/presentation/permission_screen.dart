@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/core/theme/colors.dart';
 import 'package:investing101_development/shared/widgets/onboarding_animation_screen.dart';
@@ -17,7 +17,7 @@ class PermissionScreen extends StatelessWidget {
       centerContent: const _NotificationPermissionCard(),
       primaryButtonLabel: '감각 알림 받기',
       onPrimaryTap: () {
-        Get.toNamed(Routes.widgetInstallation);
+        context.push(Routes.widgetInstallation);
       },
       secondaryButtonLabel: '나중에',
       onSecondaryTap: () {},

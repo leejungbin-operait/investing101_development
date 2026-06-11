@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/core/theme/colors.dart';
 import 'package:investing101_development/shared/widgets/three_d_button.dart';
@@ -97,7 +97,7 @@ class _ButtonSection extends StatelessWidget {
           textColor: Colors.white,
           shadowOffset: 4,
           onTap: () {
-            Get.toNamed(Routes.welcome);
+            context.push(Routes.welcome);
           },
         ),
         const SizedBox(height: 12),
@@ -109,7 +109,7 @@ class _ButtonSection extends StatelessWidget {
           shadowOffset: 3,
           borderColor: AppColors.shadowOnSurface,
           onTap: () {
-            Get.toNamed(Routes.welcome);
+            context.push(Routes.welcome);
           },
         ),
       ],

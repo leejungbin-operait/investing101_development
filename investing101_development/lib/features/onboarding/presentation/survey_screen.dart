@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/shared/widgets/onboarding_survey_screen.dart';
 
@@ -12,7 +12,7 @@ class SurveyScreen extends StatelessWidget {
       questionText: '주식에 대해서\n얼마나 알고 계시나요?',
       progress: 0.1,
       onNext: () {
-        Get.toNamed(Routes.permission);
+        context.push(Routes.permission);
       },
     );
   }

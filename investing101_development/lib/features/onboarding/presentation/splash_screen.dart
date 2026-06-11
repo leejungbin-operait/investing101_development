@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/core/theme/colors.dart';
 
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       if (mounted) {
-        Get.offAllNamed(Routes.start);
+        context.go(Routes.start);
       }
     });
   }

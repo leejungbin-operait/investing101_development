@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:investing101_development/core/routes/app_pages.dart';
-import 'package:investing101_development/core/routes/app_routes.dart';
+import 'package:investing101_development/core/routes/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
       title: 'Investing101 Development',
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
-      initialRoute: Routes.splash,
-      getPages: appPages,
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
     );
   }

@@ -115,14 +115,19 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  get:
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  go_router:
     dependency: "direct main"
     description:
-      name: get
-      sha256: "5ed34a7925b85336e15d472cc4cfe7d9ebf4ab8e8b9f688585bf6b50f4c3d79a"
+      name: go_router
+      sha256: "5922b2861e2235a3504896f0d6fa07d84141b480cf52eecd2f42cd25585a9e8a"
       url: "https://pub.dev"
     source: hosted
-    version: "4.7.3"
+    version: "17.3.0"
   home_widget:
     dependency: "direct main"
     description:
