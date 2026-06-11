@@ -40,9 +40,8 @@ class OnboardingAnimationScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     AvatarSpeechBubble(text: bubbleText, avatar: avatar),
-                    const Spacer(),
-                    centerContent,
-                    const Spacer(flex: 2),
+                    const SizedBox(height: 62),
+                    Expanded(child: Center(child: centerContent)),
                   ],
                 ),
               ),
