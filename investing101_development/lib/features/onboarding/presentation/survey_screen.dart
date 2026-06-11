@@ -12,7 +12,7 @@ class SurveyScreen extends StatelessWidget {
       questionText: '주식에 대해서\n얼마나 알고 계시나요?',
       progress: 0.1,
       onNext: () {
-        Get.toNamed(Routes.survey);
+        Get.toNamed(Routes.permission);
       },
     );
   }
