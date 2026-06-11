@@ -5,4 +5,5 @@ abstract final class Routes {
   static const preQuiz = '/pre-quiz';
   static const survey = '/survey';
   static const permission = '/permission';
+  static const widgetInstallation = '/widget-installation';
 }
