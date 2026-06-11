@@ -1,9 +1,7 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:investing101_development/core/theme/colors.dart';
+import 'package:investing101_development/shared/widgets/avatar_speech_bubble.dart';
+import 'package:investing101_development/shared/widgets/progress_bar_top_nav.dart';
 import 'package:investing101_development/shared/widgets/three_d_button.dart';
 
 /// Shared layout for onboarding survey screens: a top progress bar with
@@ -40,13 +38,19 @@ class OnboardingSurveyScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            _TopNav(progress: progress),
+            ProgressBarTopNav(progress: progress),
             Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
                 child: Column(
                   children: [
-                    _QuestionRow(questionText: questionText),
+                    AvatarSpeechBubble(
+                      text: questionText,
+                      avatar: Image.asset(
+                        'assets/images/quiz_avatar.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                     const SizedBox(height: 32),
                     for (var i = 0; i < _options.length; i++) ...[
                       if (i > 0) const SizedBox(height: 8),
@@ -75,178 +79,6 @@ class OnboardingSurveyScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _TopNav extends StatelessWidget {
-  const _TopNav({required this.progress});
-
-  final double progress;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 56,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        border: Border(
-          bottom: BorderSide(color: Color(0xFFD4DBDE), width: 2),
-        ),
-      ),
-      child: Row(
-        children: [
-          GestureDetector(
-            onTap: Get.back,
-            child: const Padding(
-              padding: EdgeInsets.all(10),
-              child: SizedBox(
-                width: 28,
-                height: 28,
-                child: Center(
-                  child: SizedBox(
-                    width: 19.14,
-                    height: 18.52,
-                    child: _BackIcon(),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(width: 12),
-          Expanded(child: _ProgressBar(progress: progress)),
-        ],
-      ),
-    );
-  }
-}
-
-class _BackIcon extends StatelessWidget {
-  const _BackIcon();
-
-  @override
-  Widget build(BuildContext context) {
-    return SvgPicture.asset('assets/images/icon_back.svg');
-  }
-}
-
-class _ProgressBar extends StatelessWidget {
-  const _ProgressBar({required this.progress});
-
-  final double progress;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 16,
-      decoration: BoxDecoration(
-        color: const Color(0xFFD4DBDE),
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: FractionallySizedBox(
-        alignment: Alignment.centerLeft,
-        widthFactor: progress.clamp(0.0, 1.0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors.shadowOnPrimary,
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: Center(
-            child: Container(
-              height: 8,
-              margin: const EdgeInsets.symmetric(horizontal: 2),
-              decoration: BoxDecoration(
-                color: AppColors.primary,
-                borderRadius: BorderRadius.circular(1000),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _QuestionRow extends StatelessWidget {
-  const _QuestionRow({required this.questionText});
-
-  final String questionText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipOval(
-          child: Image.asset(
-            'assets/images/quiz_avatar.png',
-            width: 64,
-            height: 64,
-          ),
-        ),
-        const SizedBox(width: 20),
-        Expanded(child: _QuestionBubble(text: questionText)),
-      ],
-    );
-  }
-}
-
-class _QuestionBubble extends StatelessWidget {
-  const _QuestionBubble({required this.text});
-
-  final String text;
-
-  static const _borderColor = Color(0xFFD4DBDE);
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: _borderColor, width: 2),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Text(
-            text,
-            style: const TextStyle(
-              fontFamily: 'TmoneyRoundWind',
-              fontWeight: FontWeight.w800,
-              fontSize: 13,
-              height: 18 / 13,
-              letterSpacing: -0.26,
-              color: Color(0xFF161F22),
-            ),
-          ),
-        ),
-        // Left-pointing arrow
-        Positioned(
-          left: -9,
-          top: 0,
-          bottom: 0,
-          child: Center(
-            child: Transform.rotate(
-              angle: -45 * math.pi / 180,
-              child: Container(
-                width: 12,
-                height: 12,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  border: Border(
-                    top: BorderSide(color: _borderColor, width: 2),
-                    left: BorderSide(color: _borderColor, width: 2),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
