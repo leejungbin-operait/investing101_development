@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
+import 'package:investing101_development/features/onboarding/presentation/goal_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/permission_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/pre_quiz_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/splash_screen.dart';
@@ -7,6 +8,7 @@ import 'package:investing101_development/features/onboarding/presentation/start_
 import 'package:investing101_development/features/onboarding/presentation/survey_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/welcome_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/widget_installation_screen.dart';
+import 'package:investing101_development/features/onboarding/presentation/widget_ios_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: Routes.splash,
@@ -38,6 +40,14 @@ final appRouter = GoRouter(
     GoRoute(
       path: Routes.widgetInstallation,
       builder: (context, state) => const WidgetInstallationScreen(),
+    ),
+    GoRoute(
+      path: Routes.widgetIos,
+      builder: (context, state) => const WidgetIosScreen(),
+    ),
+    GoRoute(
+      path: Routes.goal,
+      builder: (context, state) => const GoalScreen(),
     ),
   ],
 );

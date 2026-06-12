@@ -6,4 +6,6 @@ abstract final class Routes {
   static const survey = '/survey';
   static const permission = '/permission';
   static const widgetInstallation = '/widget-installation';
+  static const widgetIos = '/widget-ios';
+  static const goal = '/goal';
 }
