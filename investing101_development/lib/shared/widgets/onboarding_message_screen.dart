@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:investing101_development/core/theme/colors.dart';
+import 'package:lottie/lottie.dart';
 import 'package:investing101_development/shared/widgets/three_d_button.dart';
 
 /// Shared layout for onboarding screens that show a speech bubble,
@@ -33,7 +34,7 @@ class OnboardingMessageScreen extends StatelessWidget {
                 children: [
                   _SpeechBubble(text: bubbleText),
                   const SizedBox(height: 24),
-                  Image.asset(characterAsset, width: 180, height: 168),
+                  Lottie.asset(characterAsset, width: 180, height: 168),
                 ],
               ),
             ),
