@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
+import 'package:investing101_development/features/onboarding/presentation/experience_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/goal_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/permission_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/pre_quiz_screen.dart';
@@ -48,6 +49,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: Routes.goal,
       builder: (context, state) => const GoalScreen(),
+    ),
+    GoRoute(
+      path: Routes.experience,
+      builder: (context, state) => const ExperienceScreen(),
     ),
   ],
 );
