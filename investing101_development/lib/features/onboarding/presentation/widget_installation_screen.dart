@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/shared/widgets/onboarding_animation_screen.dart';
 
 class WidgetInstallationScreen extends StatelessWidget {
@@ -17,7 +19,9 @@ class WidgetInstallationScreen extends StatelessWidget {
         fit: BoxFit.contain,
       ),
       primaryButtonLabel: '위젯 추가하기',
-      onPrimaryTap: () {},
+      onPrimaryTap: () {
+        context.push(Routes.widgetIos);
+      },
       secondaryButtonLabel: '나중에',
       onSecondaryTap: () {},
     );

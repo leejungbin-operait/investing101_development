@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/core/theme/colors.dart';
 import 'package:investing101_development/shared/widgets/three_d_button.dart';
@@ -74,8 +75,8 @@ class _CharacterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Image.asset(
-        'assets/images/onb_character.png',
+      child: Lottie.asset(
+        'assets/animations/vesti_onboarding.json',
         width: 120,
         height: 120,
       ),

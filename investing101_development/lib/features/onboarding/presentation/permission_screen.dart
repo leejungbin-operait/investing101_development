@@ -41,8 +41,10 @@ class _NotificationPermissionCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               SvgPicture.asset(
                 'assets/images/icon_bell.svg',
