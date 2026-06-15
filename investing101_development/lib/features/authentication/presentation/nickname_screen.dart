@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/core/theme/colors.dart';
+import 'package:investing101_development/shared/widgets/primary_action_button.dart';
 import 'package:investing101_development/shared/widgets/progress_bar_top_nav.dart';
-import 'package:investing101_development/shared/widgets/three_d_button.dart';
 
 class NicknameScreen extends StatefulWidget {
   const NicknameScreen({super.key});
@@ -39,7 +41,7 @@ class _NicknameScreenState extends State<NicknameScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            const ProgressBarTopNav(progress: 0.05),
+            const ProgressBarTopNav(progress: 1 / 4),
             Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
@@ -54,7 +56,13 @@ class _NicknameScreenState extends State<NicknameScreen> {
                       onChanged: _onChanged,
                     ),
                     const SizedBox(height: 24),
-                    _NextButton(enabled: _isValid, onTap: () {}),
+                    PrimaryActionButton(
+                      label: '다음',
+                      enabled: _isValid,
+                      onTap: () {
+                        context.push(Routes.socialLogin);
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -209,47 +217,6 @@ class _NicknameField extends StatelessWidget {
           ),
         ],
       ],
-    );
-  }
-}
-
-class _NextButton extends StatelessWidget {
-  const _NextButton({required this.enabled, required this.onTap});
-
-  final bool enabled;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    if (!enabled) {
-      return Container(
-        width: double.infinity,
-        height: 48,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: const Color(0xFFD4DBDE),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: const Text(
-          '다음',
-          style: TextStyle(
-            fontFamily: 'TmoneyRoundWind',
-            fontWeight: FontWeight.w800,
-            fontSize: 15,
-            height: 22 / 15,
-            letterSpacing: -0.45,
-            color: Color(0xFFB7C3C8),
-          ),
-        ),
-      );
-    }
-
-    return ThreeDButton(
-      label: '다음',
-      backgroundColor: AppColors.primary,
-      shadowColor: AppColors.shadowOnPrimary,
-      textColor: Colors.white,
-      onTap: onTap,
     );
   }
 }
