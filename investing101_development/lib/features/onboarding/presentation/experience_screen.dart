@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/core/theme/colors.dart';
 import 'package:investing101_development/shared/widgets/avatar_speech_bubble.dart';
 import 'package:investing101_development/shared/widgets/progress_bar_top_nav.dart';
@@ -61,7 +63,9 @@ class ExperienceScreen extends StatelessWidget {
             backgroundColor: AppColors.primary,
             shadowColor: AppColors.shadowOnPrimary,
             textColor: Colors.white,
-            onTap: () {},
+            onTap: () {
+              context.push(Routes.nickname);
+            },
           ),
         ),
       ),
