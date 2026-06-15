@@ -9,7 +9,6 @@ class OnboardingAnimationScreen extends StatelessWidget {
     super.key,
     required this.progress,
     required this.bubbleText,
-    required this.avatar,
     required this.centerContent,
     required this.primaryButtonLabel,
     required this.onPrimaryTap,
@@ -19,7 +18,6 @@ class OnboardingAnimationScreen extends StatelessWidget {
 
   final double progress;
   final String bubbleText;
-  final Widget avatar;
   final Widget centerContent;
   final String primaryButtonLabel;
   final VoidCallback onPrimaryTap;
@@ -39,8 +37,8 @@ class OnboardingAnimationScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(20, 32, 20, 0),
                 child: Column(
                   children: [
-                    AvatarSpeechBubble(text: bubbleText, avatar: avatar),
-                    const SizedBox(height: 62),
+                    AvatarSpeechBubble(text: bubbleText),
+                    const SizedBox(height: 32),
                     Expanded(child: Center(child: centerContent)),
                   ],
                 ),
