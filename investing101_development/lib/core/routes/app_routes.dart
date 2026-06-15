@@ -10,4 +10,7 @@ abstract final class Routes {
   static const goal = '/goal';
   static const experience = '/experience';
   static const nickname = '/nickname';
+  static const socialLogin = '/social-login';
+  static const email = '/email';
+  static const password = '/password';
 }

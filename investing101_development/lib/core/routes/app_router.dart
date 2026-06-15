@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
+import 'package:investing101_development/features/authentication/presentation/email.dart';
 import 'package:investing101_development/features/authentication/presentation/nickname_screen.dart';
+import 'package:investing101_development/features/authentication/presentation/password.dart';
 import 'package:investing101_development/features/onboarding/presentation/experience_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/goal_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/permission_screen.dart';
@@ -9,6 +11,7 @@ import 'package:investing101_development/features/onboarding/presentation/splash
 import 'package:investing101_development/features/onboarding/presentation/start_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/survey_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/welcome_screen.dart';
+import 'package:investing101_development/features/authentication/presentation/social_login_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/widget_installation_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/widget_ios_screen.dart';
 
@@ -58,6 +61,18 @@ final appRouter = GoRouter(
     GoRoute(
       path: Routes.nickname,
       builder: (context, state) => const NicknameScreen(),
+    ),
+    GoRoute(
+      path: Routes.socialLogin,
+      builder: (context, state) => const SocialLoginScreen(),
+    ),
+    GoRoute(
+      path: Routes.email,
+      builder: (context, state) => const EmailScreen(),
+    ),
+    GoRoute(
+      path: Routes.password,
+      builder: (context, state) => const PasswordScreen(),
     ),
   ],
 );
