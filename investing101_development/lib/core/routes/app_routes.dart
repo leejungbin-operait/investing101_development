@@ -13,4 +13,5 @@ abstract final class Routes {
   static const socialLogin = '/social-login';
   static const email = '/email';
   static const password = '/password';
+  static const completeSignUp = '/complete-sign-up';
 }
