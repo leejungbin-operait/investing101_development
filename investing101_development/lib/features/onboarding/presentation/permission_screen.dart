@@ -13,7 +13,6 @@ class PermissionScreen extends StatelessWidget {
     return OnboardingAnimationScreen(
       progress: 0.45,
       bubbleText: '습관이 될 수 있도록\n알림을 보내드릴게요!',
-      avatar: Image.asset('assets/images/quiz_avatar.png', fit: BoxFit.cover),
       centerContent: const _NotificationPermissionCard(),
       primaryButtonLabel: '감각 알림 받기',
       onPrimaryTap: () {
