@@ -1,21 +1,15 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 /// A 64x64 circular avatar paired with a left-pointing speech bubble,
 /// used across onboarding screens to introduce a message from the mascot.
 class AvatarSpeechBubble extends StatelessWidget {
-  const AvatarSpeechBubble({
-    super.key,
-    required this.text,
-    required this.avatar,
-  });
+  const AvatarSpeechBubble({super.key, required this.text});
 
   /// The message shown inside the speech bubble.
   final String text;
-
-  /// The avatar image, clipped to a 64x64 circle.
-  final Widget avatar;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +17,14 @@ class AvatarSpeechBubble extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ClipOval(
-          child: SizedBox(width: 64, height: 64, child: avatar),
+          child: SizedBox(
+            width: 64,
+            height: 64,
+            child: Lottie.asset(
+              'assets/animations/vesti_speech_avatar.json',
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
         const SizedBox(width: 20),
         Expanded(child: _SpeechBubble(text: text)),
