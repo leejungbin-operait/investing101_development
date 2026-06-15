@@ -44,13 +44,7 @@ class OnboardingSurveyScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
                 child: Column(
                   children: [
-                    AvatarSpeechBubble(
-                      text: questionText,
-                      avatar: Image.asset(
-                        'assets/images/quiz_avatar.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                    AvatarSpeechBubble(text: questionText),
                     const SizedBox(height: 32),
                     for (var i = 0; i < _options.length; i++) ...[
                       if (i > 0) const SizedBox(height: 8),
