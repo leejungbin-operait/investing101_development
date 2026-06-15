@@ -1,9 +1,10 @@
 import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
-import 'package:investing101_development/features/authentication/presentation/complete_sign_up.dart';
+import 'package:investing101_development/features/authentication/presentation/complete_sign_up_screen.dart';
 import 'package:investing101_development/features/authentication/presentation/email_screen.dart';
+import 'package:investing101_development/features/authentication/presentation/existing_email_screen.dart';
 import 'package:investing101_development/features/authentication/presentation/nickname_screen.dart';
-import 'package:investing101_development/features/authentication/presentation/password.dart';
+import 'package:investing101_development/features/authentication/presentation/password_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/experience_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/goal_screen.dart';
 import 'package:investing101_development/features/onboarding/presentation/permission_screen.dart';
@@ -71,6 +72,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: Routes.password,
       builder: (context, state) => const PasswordScreen(),
+    ),
+    GoRoute(
+      path: Routes.existingEmail,
+      builder: (context, state) => const ExistingEmailScreen(),
     ),
     GoRoute(
       path: Routes.completeSignUp,
