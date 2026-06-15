@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:investing101_development/core/routes/app_routes.dart';
 import 'package:investing101_development/core/theme/colors.dart';
 import 'package:investing101_development/shared/widgets/avatar_speech_bubble.dart';
 import 'package:investing101_development/shared/widgets/progress_bar_top_nav.dart';
@@ -39,12 +41,8 @@ class GoalScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(20, 32, 20, 0),
                 child: Column(
                   children: [
-                    AvatarSpeechBubble(
+                    const AvatarSpeechBubble(
                       text: '3개월 내에 다음 목표를 달성할 수 있어요!',
-                      avatar: Image.asset(
-                        'assets/images/quiz_avatar.png',
-                        fit: BoxFit.cover,
-                      ),
                     ),
                     const SizedBox(height: 32),
                     for (final feature in _features)
@@ -68,7 +66,9 @@ class GoalScreen extends StatelessWidget {
             backgroundColor: AppColors.primary,
             shadowColor: AppColors.shadowOnPrimary,
             textColor: Colors.white,
-            onTap: () {},
+            onTap: () {
+              context.push(Routes.experience);
+            },
           ),
         ),
       ),
