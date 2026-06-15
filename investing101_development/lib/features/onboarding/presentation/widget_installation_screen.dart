@@ -11,7 +11,6 @@ class WidgetInstallationScreen extends StatelessWidget {
     return OnboardingAnimationScreen(
       progress: 0.825,
       bubbleText: '홈 화면에서 인베스팅101\n학습 기록을 확인할 수 있어요!',
-      avatar: Image.asset('assets/images/quiz_avatar.png', fit: BoxFit.cover),
       centerContent: Image.asset(
         'assets/images/widget_install_phone.png',
         width: 335,

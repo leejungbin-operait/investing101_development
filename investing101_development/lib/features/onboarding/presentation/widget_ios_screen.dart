@@ -12,7 +12,6 @@ class WidgetIosScreen extends StatelessWidget {
     return OnboardingAnimationScreen(
       progress: 0.825,
       bubbleText: '먼저, 홈 화면에서 아무 곳이나 길게 누르고...',
-      avatar: Image.asset('assets/images/quiz_avatar.png', fit: BoxFit.cover),
       centerContent: Image.asset(
         'assets/images/widget_install_ios.png',
         width: 240,
