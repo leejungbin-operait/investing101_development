@@ -9,4 +9,5 @@ abstract final class Routes {
   static const widgetIos = '/widget-ios';
   static const goal = '/goal';
   static const experience = '/experience';
+  static const nickname = '/nickname';
 }
