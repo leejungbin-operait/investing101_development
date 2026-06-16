@@ -76,7 +76,7 @@ class _CharacterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Lottie.asset(
-        'assets/animations/vesti_onboarding.json',
+        'assets/animations/vesti/vesti_onboarding.json',
         width: 120,
         height: 120,
       ),

@@ -10,7 +10,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingMessageScreen(
       bubbleText: '베스티에요.\n반가워요!',
-      characterAsset: 'assets/animations/vesti_onboarding.json',
+      characterAsset: 'assets/animations/vesti/vesti_onboarding.json',
       buttonText: '반가워 베스티!',
       onButtonTap: () {
         context.push(Routes.preQuiz);

@@ -10,7 +10,7 @@ class PreQuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingMessageScreen(
       bubbleText: '첫 레슨 시작하기 전에\n간단한 질문 5개만 여쭤볼게요!',
-      characterAsset: 'assets/animations/vesti_onboarding.json',
+      characterAsset: 'assets/animations/vesti/vesti_onboarding.json',
       buttonText: '계속하기',
       onButtonTap: () {
         context.push(Routes.survey);
