@@ -21,7 +21,7 @@ class AvatarSpeechBubble extends StatelessWidget {
             width: 64,
             height: 64,
             child: Lottie.asset(
-              'assets/animations/vesti_speech_avatar.json',
+              'assets/animations/vesti/vesti_speech_avatar.json',
               fit: BoxFit.cover,
             ),
           ),
