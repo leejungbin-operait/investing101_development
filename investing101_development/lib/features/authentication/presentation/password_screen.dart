@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:investing101_development/core/routes/app_routes.dart';
-import 'package:investing101_development/core/theme/colors.dart';
+import 'package:investing101_development/shared/widgets/password_field.dart';
 import 'package:investing101_development/shared/widgets/primary_action_button.dart';
 import 'package:investing101_development/shared/widgets/progress_bar_top_nav.dart';
 
@@ -58,7 +57,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
       });
       return;
     }
-    context.push(Routes.completeSignUp);
+    // context.push(Routes.completeSignUp);
+    context.push(Routes.existingEmail);
   }
 
   @override
@@ -77,10 +77,11 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   children: [
                     const _Heading(),
                     const SizedBox(height: 24),
-                    _PasswordField(
+                    PasswordField(
                       controller: _controller,
                       obscureText: _obscureText,
                       hasError: _hasError,
+                      errorMessage: '더 강한 비밀번호를 사용해주세요!',
                       onChanged: _onChanged,
                       onToggleObscureText: _toggleObscureText,
                     ),
@@ -116,111 +117,6 @@ class _Heading extends StatelessWidget {
         letterSpacing: -0.51,
         color: Color(0xFF161F22),
       ),
-    );
-  }
-}
-
-class _PasswordField extends StatelessWidget {
-  const _PasswordField({
-    required this.controller,
-    required this.obscureText,
-    required this.hasError,
-    required this.onChanged,
-    required this.onToggleObscureText,
-  });
-
-  final TextEditingController controller;
-  final bool obscureText;
-  final bool hasError;
-  final ValueChanged<String> onChanged;
-  final VoidCallback onToggleObscureText;
-
-  static const _defaultBorderColor = Color(0xFFD4DBDE);
-  static const _errorColor = Color(0xFFE42939);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        TextField(
-          controller: controller,
-          obscureText: obscureText,
-          onChanged: onChanged,
-          style: const TextStyle(
-            fontFamily: 'TmoneyRoundWind',
-            fontWeight: FontWeight.w800,
-            fontSize: 15,
-            height: 22 / 15,
-            letterSpacing: -0.45,
-            color: Color(0xFF161F22),
-          ),
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 12,
-            ),
-            suffixIcon: IconButton(
-              icon: Icon(
-                obscureText ? Icons.visibility_off : Icons.visibility,
-                color: const Color(0xFF9AABB2),
-                size: 24,
-              ),
-              onPressed: onToggleObscureText,
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: _defaultBorderColor,
-                width: 2,
-              ),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: _defaultBorderColor,
-                width: 2,
-              ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(
-                color: hasError ? _errorColor : AppColors.primary,
-                width: 2,
-              ),
-            ),
-          ),
-        ),
-        if (hasError) ...[
-          const SizedBox(height: 2),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4),
-            child: Row(
-              children: [
-                SvgPicture.asset(
-                  'assets/images/icon_error.svg',
-                  width: 16,
-                  height: 16,
-                ),
-                const SizedBox(width: 4),
-                const Expanded(
-                  child: Text(
-                    '더 강한 비밀번호를 사용해주세요!',
-                    style: TextStyle(
-                      fontFamily: 'TmoneyRoundWind',
-                      fontWeight: FontWeight.w800,
-                      fontSize: 11,
-                      height: 14 / 11,
-                      letterSpacing: -0.22,
-                      color: _errorColor,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ],
     );
   }
 }
